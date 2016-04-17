@@ -13,4 +13,4 @@ but notice that the right upper corner has some data, but they are out of SF tec
 
 Here is the cleaned data
 
-![Clean graph](https://github.com/vyolovski/sfcrimeproject/blob/master/dataviz%20final/original.png)
+![Clean graph](https://github.com/vyolovski/sfcrimeproject/blob/master/dataviz%20final/clean.png)
