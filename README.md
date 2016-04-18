@@ -7,10 +7,10 @@ The whole data gathered was not all confined in SF, so we need to cut some data 
 
 This is the data visualization after filtering irrelavant data:
 
-![Original graph](https://github.com/vyolovski/sfcrimeproject/blob/master/dataviz%20final/original.png)
-
-but notice that the right upper corner has some data, but they are out of SF technically, so I further cut out that part. 
-
-Here is the cleaned data
-
 ![Clean graph](https://github.com/vyolovski/sfcrimeproject/blob/master/dataviz%20final/clean.png)
+
+In order to use machine learning. We split the SF into 9 regions.
+
+Here is a example of how it looks (It's used the runaway categories as basis):
+
+![Splitted graph](https://github.com/vyolovski/sfcrimeproject/blob/master/dataviz%20final/runaway%20cutted%20in%209%20pieces.png)
