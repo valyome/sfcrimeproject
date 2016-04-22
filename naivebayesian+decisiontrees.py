@@ -1,8 +1,3 @@
-
-# coding: utf-8
-
-# In[2]:
-
 import pandas as pd
 from sklearn.cross_validation import train_test_split
 from sklearn import preprocessing
@@ -13,18 +8,9 @@ import numpy as np
 
 #Load Data with pandas, and parse the first column into datetime
 
-
-# In[3]:
-
 train=pd.read_csv('train.csv', parse_dates = ['Dates'],low_memory=False)
-
-
-# In[4]:
-
 test=pd.read_csv('test.csv', parse_dates = ['Dates'],low_memory=False)
 
-
-# In[25]:
 
 #Convert crime labels to numbers
 le = preprocessing.LabelEncoder()
@@ -38,8 +24,6 @@ train_data.columns = ['hour','day', 'PdDistrict','crime']
 train_data[:5]
 
 
-# In[27]:
-
 training, validation = train_test_split(train_data, train_size=.60,random_state=0)
 print type(training), type(validation)
 features = ['hour','day','PdDistrict']
@@ -51,8 +35,6 @@ predicted = np.array(naivebayesianmodel.predict_proba(validation[features]))
 print log_loss(validation['crime'], predicted)
 
 
-# In[34]:
-
 from sklearn import tree
 training1, validation1 = train_test_split(train_data, train_size=.90,random_state=0)
 decisiontree = tree.DecisionTreeClassifier(max_depth = 5)
@@ -62,13 +44,5 @@ predictedtree = np.array(decisiontree.predict_proba(validation1[features]))
 print log_loss(validation1['crime'], predictedtree)
 
 
-# In[32]:
-
 print training1
 print validation1
-
-
-# In[ ]:
-
-
-
