@@ -30,6 +30,10 @@ footer, header, hgroup, menu, nav, section {
 nav ul, nav li { margin: 0; }
 nav ul, ul { list-style:none; }
 
+.titlebar {
+  padding: 0px 0px 0px 30px;
+}
+
 .span1, .span2, .span3{
     float:left;
     -webkit-box-sizing:border-box;
@@ -51,8 +55,8 @@ nav ul, ul { list-style:none; }
 }
 .span2{
   width: 66.5%;
-  
 }
+
 .span3{
   width: 100%;
   margin-left: 0;
@@ -92,6 +96,10 @@ header{
 
 header h1{
   margin: 7px 0 0 0;
+}
+
+.maintext {
+  padding-left: 30px;
 }
 
 #container{
