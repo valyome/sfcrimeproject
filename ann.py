@@ -95,6 +95,7 @@ predicted_proba = np.array(classifier.predict_proba(validation_features))
 predicted_categories = np.array(classifier.predict(validation_features))
 
 print accuracy_score(validation_crime, predicted_categories)
+print log_loss(predicted_proba, validation_crime)
 
 predicted_proba_most_probable_categories = []
 for element in predicted_proba:
