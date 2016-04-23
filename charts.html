@@ -1,0 +1,91 @@
+<!doctype html>  
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  
+  <title>SF Crime Analysis and Classification</title>
+  <script type="text/javascript" src="http://kozea.github.com/pygal.js/latest/pygal-tooltips.min.js"></script>
+  <link rel="shortcut icon" href="/favicon.ico">
+ 	<link rel="stylesheet" href="style.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js"></script>
+
+</head>
+
+<body class="cf">
+
+  <header class="span3">
+  	<div class="inner cf">
+  		<h1 class="alt span2">SF Crime Stats</h1>
+  	<nav class="span1 col">
+			<ul class="cf">
+				<li><a class="alt" href="index.html">Summary</a></li>
+				<li><a class="alt" href="#">Charts</a></li>
+			</ul>
+		</nav>
+	</div>
+  </header>
+
+  <div id="container" class="cf">  
+
+  	<article class="span2">
+				<section>
+          <h1>Charts</h1>
+          <section>
+          <h2>Larceny</h2>
+          <p>This is by far the mot common crime in th last 12 years accounting for about 20% of all crimes. Looking at the data one can see a big increase in theft in the end of 2011. Again, the data points are rolling averages of every 50 days.</p>
+          <figure>
+           <embed type="image/svg+xml" src="svgs/larceny1theft.svg" />
+          </figure>
+        </section>
+   
+        </section>
+        <section>
+          <h2>Vehicle Theft</h2>
+          <p>Vehicle theft, albeit only about 6% of all crimes done in the last 12 years has had a significant drop in the span between june 2005 and october 2006. At first we hypotesized this may be corelated with the increase in SFPD force but <a href="https://www.kaggle.com/eyecjay/sf-crime/vehicle-thefts-or-jerry-rice-jubilation/notebook"> this report </a> on Kaggle showed us that the SFPD has actually stopped putting recovered vehicles in that category so this graph would be misleading. </p>
+          <figure>
+           <embed type="image/svg+xml" src="svgs/vehicle theft.svg" />
+          </figure>
+        </section>
+        <section>
+          <h2>Assaults</h2>
+          <p>Assaults have been steadily around the 35 per day average for the past 12 years.</p>
+          <figure>
+           <embed type="image/svg+xml" src="svgs/assault.svg" />
+          </figure>
+        </section>
+                <section>
+          <h2>Non-criminal</h2>
+          <p>This is a interesting category. It includes primarily lost property reports, mental crisis aid from the SFPD, death reports and found property reports. THere is a big increase from 2009 to 2013 indicating more significantly more people started reporting to the police force.</p>
+          <figure>
+           <embed type="image/svg+xml" src="svgs/non-criminal.svg" />
+          </figure>
+        </section>
+                        <section>
+          <h2>Vandalism</h2>
+          <p>Judging by the graph below vandalism has been a very steady and common crime category for the entire span of the 12 years.</p>
+          <figure>
+           <embed type="image/svg+xml" src="svgs/vandalism.svg" />
+          </figure>
+        </section>
+			</article>
+
+			<aside class="span1 col">
+					<h2>More similar projects</h2>
+          <p>This project was inspired by the Kaggle competition on SF crime classification which can be found <a href='https://www.kaggle.com/c/sf-crime'>here</a>. Many other solutions and similar projects can be found on that website. We have also used SF open data to gather the data about crimes. </p>
+			</aside>
+
+  </div> <!--! end of #container -->
+
+  <footer>
+    
+  </footer>
+
+</body>
+</html>
+
