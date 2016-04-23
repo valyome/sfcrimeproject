@@ -22,7 +22,7 @@ test=pd.read_csv('test.csv', parse_dates = ['Dates'],low_memory=False)
 
 # # Implementing Decision Tree Model
 
-# In[4]:
+# In[24]:
 
 from sklearn import metrics
 #Convert labels to numbers
@@ -50,6 +50,12 @@ print metrics.log_loss(validation1['crime'], predictedtreeprob)
 print metrics.accuracy_score(validation1['crime'], predictedtree)
 
 
+# In[45]:
+
+import scipy
+print scipy.stats.mode(crime)
+
+
 # In[8]:
 
 #performing cross validation: calculate cross validation score
@@ -71,7 +77,7 @@ naivebayesiantrain_data = pd.concat([dummyhour, dummydays, dummydistrict], axis=
 naivebayesiantrain_data['crime']=crime
 
 
-# In[ ]:
+# In[15]:
 
 originaldatanaivebayes = naive_bayes.BernoulliNB()
 originaldatanaivebayes.fit(training1[features], training1['crime'])
@@ -84,7 +90,7 @@ naivebayesscores = cross_val_score(originaldatanaivebayes, training1[features], 
 naivebayesscores
 
 
-# In[ ]:
+# In[16]:
 
 training, validation = train_test_split(naivebayesiantrain_data, train_size=.60,random_state=0)
 naivebayesianfeatures = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,'Friday', 'Monday', 'Saturday', 'Sunday', 'Thursday', 'Tuesday',
@@ -100,7 +106,7 @@ print metrics.log_loss(validation['crime'], predictedprob)
 print metrics.accuracy_score(validation['crime'], predicted)
 
 
-# In[ ]:
+# In[17]:
 
 from sklearn.cross_validation import cross_val_score
 naivebayesianscores = cross_val_score(naivebayesianmodel, training[naivebayesianfeatures], training['crime'])
@@ -110,14 +116,13 @@ naivebayesianscores
 # # Implement Random Forest
 # 
 
-# In[ ]:
+# In[19]:
 
 from sklearn import ensemble
 Randomforest = ensemble.RandomForestClassifier(n_estimators=100,min_samples_split=1)
 Randomforest.fit(training1[features], training1['crime'])
 predictedtreeprob = np.array(Randomforest.predict_proba(validation1[features]))
 predictedtree = np.array(Randomforest.predict(validation1[features]))
-print "The number of trees in the forest is: ", i
 print metrics.log_loss(validation1['crime'], predictedtreeprob),
 print metrics.accuracy_score(validation1['crime'], predictedtree)
 
@@ -127,4 +132,22 @@ print metrics.accuracy_score(validation1['crime'], predictedtree)
 from sklearn.cross_validation import cross_val_score
 
 scores = cross_val_score(Randomforest, training1[features], training1['crime'])
+
+
+# # Implementing Random Predictor
+
+# In[46]:
+
+randomprediction = np.random.choice(range(39),size=len(validation1['crime']))
+print metrics.accuracy_score(validation1['crime'], randomprediction)
+
+
+# # Implementing Uniform Mode Predictor
+
+# In[53]:
+
+from scipy import stats
+uniformmodeprediction = stats.norm.rvs(16,0,size=len(validation1['crime']))
+print metrics.accuracy_score(validation1['crime'], uniformmodeprediction)
+
 
